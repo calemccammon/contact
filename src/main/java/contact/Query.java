@@ -24,10 +24,11 @@ public class Query extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	ConnectionManager newConnection = new ConnectionManager();
-		Connection conn = newConnection.getConnection();
+		Connection conn = null;
     	if (request.getParameter("jdbc_query") !=null) {
 			try {
+				ConnectionManager newConnection = new ConnectionManager();
+				conn = newConnection.getConnection();
 				setupStatement = conn.createStatement();
 				query = "SELECT * FROM contacts WHERE firstName LIKE " + "\'" + search + "%\'" +
 						" OR lastName LIKE " + "\'" + search + "%\'" +
@@ -73,6 +74,7 @@ public class Query extends HttpServlet {
 						out.println("</table>");
 					}
 				}
+				resultSet = null;
 			} catch (SQLException e) {
 				e.printStackTrace();
 			} finally {

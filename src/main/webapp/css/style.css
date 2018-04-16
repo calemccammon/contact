@@ -1,16 +1,23 @@
 body {
-   background-image: url("../images/1.jpg");
-   background-size: 100%;
+    background: url("../images/1.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
 }
 
 .outer-div {
-     padding: 30px;
+     padding-top: 30px;
+     padding-left: 500px;
+     padding-right: 500px;
+     padding-bottom: 30px;
 }
 
 .inner-div {
      margin: auto;
-     width: 900px;
-     height: 100px;  
+     width: 100%;
 }
 
 .form-content {
@@ -93,4 +100,26 @@ body {
   .topnav input[type=text] {
     border: 1px solid #ccc;  
   }
+}
+
+@media only screen and (min-width: 480px) {
+    /* landscape mode */
+    .outer-div {
+    	padding: 30px;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    /* portrait mode */
+    .outer-div {
+    	-webkit-text-size-adjust: 100%;
+		-ms-text-size-adjust: 100%;
+    	padding: 30px;
+    }
+}
+
+@media only screen and (max-height:768px) {
+	.outer-div {
+		padding: 30px;
+	}
 }
