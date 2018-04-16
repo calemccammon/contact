@@ -1,7 +1,7 @@
 ![Alt text](https://github.com/calemccammon/contact/blob/master/src/main/webapp/images/screenshot.PNG "Screenshot")
 
 # contact
-<b>Contact Web Application</b>
+<b>Contact Web Application</b><br/>
 Author: Cale McCammon
 
 Contact is a J2EE web application for storing contact information (name, address, phone number) etc. It 
